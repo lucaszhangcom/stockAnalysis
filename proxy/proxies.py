@@ -24,7 +24,7 @@ class Proxies:
 
     def __init__(self):
         if len(self.__proxies) == 0:
-            f = open("/Users/lucas-joyce/工作/python/stockCrawler2/proxy/allProxies.txt", "r")
+            f = open("/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt", "r")
             for l in f:
                 split = l.split("\t")
                 proxy = {split[0]: split[1].replace("\n", "")}
@@ -59,6 +59,9 @@ class Proxies:
 
         if len(self.__proxies) == 0:
             return None
+
+    def set_header(self, name, value):
+        self.__headers[name] = value
 
     def crawl_url(self, url, timeout=5, is_get=False):
         proxy = self._get_proxy()

@@ -16,7 +16,7 @@ class UnitConversionUtil:
 
         return v
 
-    def prent_to_fload(self, prent, decimals=4):
+    def prent_to_float(self, prent, decimals=4):
         p_float = float(prent[:-1]) / 100
         return round(p_float, decimals)
 

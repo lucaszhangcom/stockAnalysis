@@ -60,8 +60,8 @@ class ShareholderReportCrawler:
             else:
                 avg_tradable_share_chain = tbody[3].select("td")[i].select("span")[0].get_text()
 
-            shareholder_chain = unitConversionUtil.prent_to_fload(shareholder_chain)
-            avg_tradable_share_chain = unitConversionUtil.prent_to_fload(avg_tradable_share_chain)
+            shareholder_chain = unitConversionUtil.prent_to_float(shareholder_chain)
+            avg_tradable_share_chain = unitConversionUtil.prent_to_float(avg_tradable_share_chain)
 
             if total_shareholder[-1:] == u'亿' or total_shareholder[-1:] == u'万':
                 total_shareholder = unitConversionUtil.convert_to_yuan(total_shareholder[:-1], total_shareholder[-1:])
