@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d7319e7-aaad-4de7-b3df-6f688fd96a74" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py" afterPath="$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/10jqka/shareholderReportCrawler.py" afterPath="$PROJECT_DIR$/crawler/10jqka/shareholderReportCrawler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py" afterPath="$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/__init__.py" afterPath="$PROJECT_DIR$/model/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proxy/proxies.py" afterPath="$PROJECT_DIR$/proxy/proxies.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/unitConversionUtil.py" afterPath="$PROJECT_DIR$/utils/unitConversionUtil.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py" afterPath="$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/dataSource.py" afterPath="$PROJECT_DIR$/dao/dataSource.py" />
     </list>
     <ignored path="stockCrawler2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +25,14 @@
     <SUITE FILE_PATH="coverage/stockCrawler2$stockFinanceCrawler.coverage" NAME="stockFinanceCrawler Coverage Results" MODIFIED="1515146798332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$investChanceList.coverage" NAME="investChanceList Coverage Results" MODIFIED="1511775254979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$proxies.coverage" NAME="proxies Coverage Results" MODIFIED="1513344408898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proxy" />
-    <SUITE FILE_PATH="coverage/stockCrawler$stockDetailDaily.coverage" NAME="stockDetailDaily Coverage Results" MODIFIED="1515170236937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
+    <SUITE FILE_PATH="coverage/stockCrawler$stockFinanceCrawler.coverage" NAME="stockFinanceCrawler Coverage Results" MODIFIED="1515507696231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
+    <SUITE FILE_PATH="coverage/stockCrawler$stockDetailDaily.coverage" NAME="stockDetailDaily Coverage Results" MODIFIED="1515424075790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
+    <SUITE FILE_PATH="coverage/stockCrawler$ipoCrawler.coverage" NAME="ipoCrawler Coverage Results" MODIFIED="1515507677947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$DataSource.coverage" NAME="DataSource Coverage Results" MODIFIED="1511944799177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/stockCrawler2$IndustryCrawler.coverage" NAME="IndustryCrawler Coverage Results" MODIFIED="1515146353725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$randomTest.coverage" NAME="randomTest Coverage Results" MODIFIED="1511965911697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stockCrawler2$stockDetailDaily.coverage" NAME="stockDetailDaily Coverage Results" MODIFIED="1514993691996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
+    <SUITE FILE_PATH="coverage/stockCrawler$IndustryCrawler.coverage" NAME="IndustryCrawler Coverage Results" MODIFIED="1515507453400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$ipoCrawler.coverage" NAME="ipoCrawler Coverage Results" MODIFIED="1515146769658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$investChanceListCrawler.coverage" NAME="investChanceListCrawler Coverage Results" MODIFIED="1511966094521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler/10jqka" />
     <SUITE FILE_PATH="coverage/stockCrawler2$stockDao.coverage" NAME="stockDao Coverage Results" MODIFIED="1511945756455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db/hexun" />
@@ -50,20 +51,44 @@
       <file leaf-file-name="init.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/init.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
+            <state relative-caret-position="1125">
               <caret line="75" column="11" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stockDetailDaily.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py">
+      <file leaf-file-name="stockDetailDailyCrawler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+            <state relative-caret-position="1065">
+              <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
               <folding>
                 <element signature="e#45#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stockDetailDailyDao.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/stockDetailDailyDao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stockDao.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/stockDao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="8" />
+              <folding>
+                <marker date="1515147767000" expanded="true" signature="352:400" ph="insert into stock... " />
+                <marker date="1515147767000" expanded="true" signature="804:953" ph="select id, c... stock" />
+                <marker date="1515147767000" expanded="true" signature="1443:1585" ph="update stock... " />
               </folding>
             </state>
           </provider>
@@ -79,45 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/__init__.py">
+      <file leaf-file-name="categoryCrawler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/10jqka/categoryCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shareholderReportCrawler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/10jqka/shareholderReportCrawler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="63" column="72" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
-              <folding>
-                <element signature="e#32#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proxies.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proxy/proxies.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="320">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categoryCrawler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawler/10jqka/categoryCrawler.py">
+      <file leaf-file-name="dataSource.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/dataSource.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1067">
-              <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+            <state relative-caret-position="120">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -136,18 +137,18 @@
       <file leaf-file-name="ipoCrawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawler/10jqka/ipoCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/category.py">
+      <file leaf-file-name="stockFinanceCrawler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="499">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -208,14 +209,16 @@
         <option value="$PROJECT_DIR$/dao/__init__.py" />
         <option value="$PROJECT_DIR$/dao/shareholderReportDao.py" />
         <option value="$PROJECT_DIR$/sql/init.sql" />
-        <option value="$PROJECT_DIR$/dao/dataSource.py" />
-        <option value="$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py" />
         <option value="$PROJECT_DIR$/proxy/proxies.py" />
         <option value="$PROJECT_DIR$/model/stockDetailDaily.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/crawler/10jqka/shareholderReportCrawler.py" />
         <option value="$PROJECT_DIR$/utils/unitConversionUtil.py" />
         <option value="$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py" />
+        <option value="$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py" />
+        <option value="$PROJECT_DIR$/dao/dataSource.py" />
+        <option value="$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py" />
+        <option value="$PROJECT_DIR$/dao/stockDetailDailyDao.py" />
       </list>
     </option>
   </component>
@@ -227,7 +230,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1301" />
+    <option name="width" value="1486" />
     <option name="height" value="1338" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -255,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,6 +343,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="crawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -364,7 +382,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,7 +403,7 @@
       <recent name="$PROJECT_DIR$/crawler/10jqka" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.stockDetailDaily">
+  <component name="RunManager" selected="Python.stockFinanceCrawler">
     <configuration default="false" name="IndustryCrawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -472,7 +489,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="stockCrawler2" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -694,10 +711,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.stockDetailDaily" />
-        <item index="1" class="java.lang.String" itemvalue="Python.stockFinanceCrawler" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ipoCrawler" />
-        <item index="3" class="java.lang.String" itemvalue="Python.IndustryCrawler" />
+        <item index="0" class="java.lang.String" itemvalue="Python.stockFinanceCrawler" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ipoCrawler" />
+        <item index="2" class="java.lang.String" itemvalue="Python.IndustryCrawler" />
+        <item index="3" class="java.lang.String" itemvalue="Python.stockDetailDaily" />
         <item index="4" class="java.lang.String" itemvalue="Python.shareholderReportCrawler" />
       </list>
     </recent_temporary>
@@ -716,20 +733,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1301" height="1338" extended-state="0" />
+    <frame x="0" y="22" width="1486" height="1338" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20174742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.183518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34510434" sideWeight="0.5031771" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34991974" sideWeight="0.49682286" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34935898" sideWeight="0.49682286" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2728732" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2724359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -844,19 +861,19 @@
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py</url>
-          <line>66</line>
+          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py</url>
+          <line>67</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py</url>
-          <line>92</line>
+          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py</url>
+          <line>108</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="90" />
+          <url>file://$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -869,21 +886,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="91" />
+      <option name="time" value="93" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crawler/hexun/stockListCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding>
-            <element signature="e#24#35#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/10jqka/investChanceListCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1086,14 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/stockDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22425">
@@ -1132,22 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/dataSource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crawler/10jqka/investChanceListCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1160,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,23 +1150,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proxy/proxies.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="1035">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/10jqka/ipoCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,34 +1164,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="15">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/10jqka/categoryCrawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1067">
-          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/10jqka/shareholderReportCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
+        <state relative-caret-position="945">
           <caret line="63" column="72" selection-start-line="63" selection-start-column="72" selection-end-line="63" selection-end-column="72" />
           <folding>
-            <element signature="e#32#41#0" expanded="true" />
+            <element signature="e#32#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1242,19 +1205,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/init.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="1125">
           <caret line="75" column="11" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockDetailDaily.py">
+    <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockDetailDailyCrawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+        <state relative-caret-position="1065">
+          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
           <folding>
             <element signature="e#45#70#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/stockDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="8" />
+          <folding>
+            <marker date="1515147767000" expanded="true" signature="352:400" ph="insert into stock... " />
+            <marker date="1515147767000" expanded="true" signature="804:953" ph="select id, c... stock" />
+            <marker date="1515147767000" expanded="true" signature="1443:1585" ph="update stock... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/dataSource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/10jqka/categoryCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/10jqka/ipoCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/10jqka/stockFinanceCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/stockDetailDailyDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

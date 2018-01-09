@@ -6,10 +6,11 @@ from proxy import Proxies
 from utils import UnitConversionUtil
 from bs4 import BeautifulSoup
 from model import StockDetailDaily
+from dao import StockDao
 
 import json
 
-class StockDetailDaily:
+class StockDetailDailyCrawler:
     __detail_data_url = "http://d.10jqka.com.cn/v2/realhead/hs_%s/last.js"
     __fund_url = "http://stockpage.10jqka.com.cn/spService/%s/Funds/realFunds"
 
@@ -63,11 +64,12 @@ class StockDetailDaily:
         soup = BeautifulSoup(response.read())
         return json.loads(soup.prettify(), object_hook=self._byteify)
 
-    def __crawl(self, stock_code):
-        detail_data = self.__crawl_detail_data(stock_code)
-        fund_data = self.__crawl_fund(stock_code)
+    def __crawl(self, stock):
+        detail_data = self.__crawl_detail_data(stock.stock_code)
+        fund_data = self.__crawl_fund(stock.stock_code)
 
         stock_detail_daily = StockDetailDaily()
+        stock_detail_daily.stock_id = stock.id
         stock_detail_daily.open_price = float(detail_data.get('7'))
         stock_detail_daily.close_price = float(detail_data.get('10'))
         stock_detail_daily.highest_price = float(detail_data.get('8'))
@@ -78,20 +80,34 @@ class StockDetailDaily:
         stock_detail_daily.amplitude = float(detail_data.get('526792'))/100
         stock_detail_daily.market_value = float(detail_data.get('3541450'))
         stock_detail_daily.circulated_stock_value = float(detail_data.get('3475914'))
+        stock_detail_daily.turnover = float(detail_data.get('19'))
+
+        trading_volume = float(detail_data.get('13'))
+        stock_detail_daily.trading_volume = trading_volume
 
         turnover = fund_data.get('title')['zlc'] + fund_data.get('title')['zlr']
-        trading_volume = float(detail_data.get('13'))
+        for fund in fund_data.get('flash'):
+            if fund.get('name') == '\xe5\xa4\xa7\xe5\x8d\x95\xe6\xb5\x81\xe5\x87\xba':#大单流出
+                stock_detail_daily.large_out = int(float(fund.get('sr')) / turnover * trading_volume)
+            elif fund.get('name') == '\xe4\xb8\xad\xe5\x8d\x95\xe6\xb5\x81\xe5\x87\xba':#中单流出
+                stock_detail_daily.mid_out = int(float(fund.get('sr')) / turnover * trading_volume)
+            elif fund.get('name') == '\xe5\xb0\x8f\xe5\x8d\x95\xe6\xb5\x81\xe5\x87\xba':#小单流出
+                stock_detail_daily.small_out = int(float(fund.get('sr')) / turnover * trading_volume)
+            elif fund.get('name') == '\xe5\xb0\x8f\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#小单流入
+                stock_detail_daily.large_in = int(float(fund.get('sr')) / turnover * trading_volume)
+            elif fund.get('name') == '\xe4\xb8\xad\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#中单流入
+                stock_detail_daily.mid_in = int(float(fund.get('sr')) / turnover * trading_volume)
+            elif fund.get('name') == '\xe5\xa4\xa7\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#大单流入
+                stock_detail_daily.small_in = int(float(fund.get('sr')) / turnover * trading_volume)
 
-        stock_detail_daily.turnover = turnover
-        stock_detail_daily.trading_volume = trading_volume
-        # stock_detail_daily.large_in =
-
-
-
+        print
 
     def crawl_all_stock(self):
-        self.__crawl('000001')
+        stock_dao = StockDao()
+        all_stocks = stock_dao.query_all_stock()
+        for stock in all_stocks:
+            self.__crawl(stock)
 
 
-stockDetailDaily = StockDetailDaily()
+stockDetailDaily = StockDetailDailyCrawler()
 stockDetailDaily.crawl_all_stock()
