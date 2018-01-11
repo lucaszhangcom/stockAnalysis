@@ -70,17 +70,17 @@ create table stock_detail_daily(
   highest_price DECIMAL (6,2),
   lowest_price DECIMAL (6,2),
   trading_volume INTEGER , --成交量
-  turnover INTEGER , --交易额
-  market_value INTEGER , --市值
-  circulated_stock_value INTEGER , --流通市值
-  amplitude DECIMAL (4,2) , --振幅
-  trading_volume_rate DECIMAL (4,2), --换手率
+  turnover bigint , --交易额
+  market_value bigint , --市值
+  circulated_stock_value bigint , --流通市值
+  amplitude DECIMAL (6,4) , --振幅
+  trading_volume_rate DECIMAL (6,4), --换手率
   pb_ratio DECIMAL (6,2), --市净率
   pe_ratio DECIMAL (6,2), --动态市盈率
-  large_in INTEGER ,--大单流入（手）
-  mid_in INTEGER ,--中单流入（手）
-  small_in INTEGER ,--小单流入（手）
-  large_out INTEGER , --大单流出（手）
-  mid_out INTEGER , --中单流出（手）
-  small_out INTEGER  --小单流出（手）
+  large_in bigint ,--大单流入（手）
+  mid_in bigint ,--中单流入（手）
+  small_in bigint ,--小单流入（手）
+  large_out bigint , --大单流出（手）
+  mid_out bigint , --中单流出（手）
+  small_out bigint  --小单流出（手）
 );

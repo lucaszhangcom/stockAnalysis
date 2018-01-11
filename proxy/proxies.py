@@ -24,7 +24,9 @@ class Proxies:
 
     def __init__(self):
         if len(self.__proxies) == 0:
-            f = open("/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt", "r")
+            # proxy_file = "/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt"
+            proxy_file = "/home/lucaszhang/workspace/python/stockCrawler/proxy/allProxies.txt"
+            f = open(proxy_file, "r")
             for l in f:
                 split = l.split("\t")
                 proxy = {split[0]: split[1].replace("\n", "")}
@@ -106,7 +108,9 @@ class Proxies:
         tbody = proxy_list.tbody
         # print proxy_list
 
-        f = open("/Users/lucas-joyce/工作/python/stockCrawler2/proxy/allProxies.txt", "a")
+        # proxy_file = "/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt"
+        proxy_file = "/home/lucaszhang/workspace/python/stockCrawler/proxy/allProxies.txt"
+        f = open(proxy_file, "a")
         for tr in tbody.select("tr"):
             tds = tr.select("td")
 

@@ -4,3 +4,4 @@ from categoryDao import CategoryDao
 from categoryStockMappingDao import CategoryStockMappingDao
 from topCategoryDailyDao import TopCategoryDailyDao
 from shareholderReportDao import ShareholderReportDao
+from stockDetailDailyDao import  StockDetailDailyDao

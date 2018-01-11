@@ -3,12 +3,13 @@
 # 每天执行一次
 
 from proxy import Proxies
-from utils import UnitConversionUtil
 from bs4 import BeautifulSoup
 from model import StockDetailDaily
 from dao import StockDao
+from dao import StockDetailDailyDao
 
 import json
+import sys
 
 class StockDetailDailyCrawler:
     __detail_data_url = "http://d.10jqka.com.cn/v2/realhead/hs_%s/last.js"
@@ -65,8 +66,9 @@ class StockDetailDailyCrawler:
         return json.loads(soup.prettify(), object_hook=self._byteify)
 
     def __crawl(self, stock):
-        detail_data = self.__crawl_detail_data(stock.stock_code)
-        fund_data = self.__crawl_fund(stock.stock_code)
+        print "crawl %s detail daily..." % stock.code
+        detail_data = self.__crawl_detail_data(stock.code)
+        fund_data = self.__crawl_fund(stock.code)
 
         stock_detail_daily = StockDetailDaily()
         stock_detail_daily.stock_id = stock.id
@@ -94,19 +96,23 @@ class StockDetailDailyCrawler:
             elif fund.get('name') == '\xe5\xb0\x8f\xe5\x8d\x95\xe6\xb5\x81\xe5\x87\xba':#小单流出
                 stock_detail_daily.small_out = int(float(fund.get('sr')) / turnover * trading_volume)
             elif fund.get('name') == '\xe5\xb0\x8f\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#小单流入
-                stock_detail_daily.large_in = int(float(fund.get('sr')) / turnover * trading_volume)
+                stock_detail_daily.small_in = int(float(fund.get('sr')) / turnover * trading_volume)
             elif fund.get('name') == '\xe4\xb8\xad\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#中单流入
                 stock_detail_daily.mid_in = int(float(fund.get('sr')) / turnover * trading_volume)
             elif fund.get('name') == '\xe5\xa4\xa7\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#大单流入
-                stock_detail_daily.small_in = int(float(fund.get('sr')) / turnover * trading_volume)
+                stock_detail_daily.large_in = int(float(fund.get('sr')) / turnover * trading_volume)
 
-        print
+        stock_detail_daily_dao = StockDetailDailyDao()
+        stock_detail_daily_dao.insert_detail_daily(stock_detail_daily)
 
     def crawl_all_stock(self):
         stock_dao = StockDao()
         all_stocks = stock_dao.query_all_stock()
-        for stock in all_stocks:
-            self.__crawl(stock)
+        for stock in all_stocks.items():
+            try:
+                self.__crawl(stock[1])
+            except:
+                print "Unexpected error:", sys.exc_value
 
 
 stockDetailDaily = StockDetailDailyCrawler()
