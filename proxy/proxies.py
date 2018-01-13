@@ -24,8 +24,8 @@ class Proxies:
 
     def __init__(self):
         if len(self.__proxies) == 0:
-            proxy_file = "/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt"
-            # proxy_file = "/home/lucaszhang/workspace/python/stockCrawler/proxy/allProxies.txt"
+            # proxy_file = "/Users/lucas-joyce/工作/python/stockCrawler/proxy/allProxies.txt"
+            proxy_file = "/home/lucaszhang/workspace/python/stockCrawler/proxy/allProxies.txt"
             f = open(proxy_file, "r")
             for l in f:
                 split = l.split("\t")
@@ -41,7 +41,7 @@ class Proxies:
     def _get_proxy(self):
         while len(self.__proxies):
             random_idx = random.randint(0, len(self.__proxies) - 1)
-            print "proxy idx:" + str(random_idx)
+            # print "proxy idx:" + str(random_idx)
 
             try:
                 proxy_handler = urllib2.ProxyHandler(self.__proxies[random_idx])

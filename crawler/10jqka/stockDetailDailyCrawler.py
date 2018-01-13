@@ -18,8 +18,11 @@ class StockDetailDailyCrawler:
     __detail_data_url = "http://d.10jqka.com.cn/v2/realhead/hs_%s/last.js"
     __fund_url = "http://stockpage.10jqka.com.cn/spService/%s/Funds/realFunds"
 
+    __stock_detail_daily_dao = None
+
     def __init__(self):
         print "init StockDetailDailyCrawler..."
+        self.__stock_detail_daily_dao = StockDetailDailyDao()
 
     def _byteify(self, data, ignore_dicts=False):
         # if this is a unicode string, return its string representation
@@ -105,8 +108,7 @@ class StockDetailDailyCrawler:
             elif fund.get('name') == '\xe5\xa4\xa7\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#大单流入
                 stock_detail_daily.large_in = int(float(fund.get('sr')) / turnover * trading_volume)
 
-        stock_detail_daily_dao = StockDetailDailyDao()
-        stock_detail_daily_dao.insert_detail_daily(stock_detail_daily)
+        self.__stock_detail_daily_dao.insert_detail_daily(stock_detail_daily)
 
     def crawl_all_stock(self):
         stock_dao = StockDao()
@@ -118,7 +120,7 @@ class StockDetailDailyCrawler:
                 print "Unexpected error:", sys.exc_value
 
             sleep_time = random.randint(10, 80)
-            print "sleep %d second..." % sleep_time
+            print "sleep %d second...\n" % sleep_time
             time.sleep(sleep_time)
 
 
