@@ -25,7 +25,7 @@ class StockDetailDaily:
     small_out = 0
 
     def __init__(self):
-        print
+        print "init StockDetailDaily..."
 
 
 

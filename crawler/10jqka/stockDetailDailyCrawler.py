@@ -10,13 +10,16 @@ from dao import StockDetailDailyDao
 
 import json
 import sys
+import time
+import random
+
 
 class StockDetailDailyCrawler:
     __detail_data_url = "http://d.10jqka.com.cn/v2/realhead/hs_%s/last.js"
     __fund_url = "http://stockpage.10jqka.com.cn/spService/%s/Funds/realFunds"
 
     def __init__(self):
-        print
+        print "init StockDetailDailyCrawler..."
 
     def _byteify(self, data, ignore_dicts=False):
         # if this is a unicode string, return its string representation
@@ -113,6 +116,10 @@ class StockDetailDailyCrawler:
                 self.__crawl(stock[1])
             except:
                 print "Unexpected error:", sys.exc_value
+
+            sleep_time = random.randint(10, 80)
+            print "sleep %d second..." % sleep_time
+            time.sleep(sleep_time)
 
 
 stockDetailDaily = StockDetailDailyCrawler()

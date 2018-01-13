@@ -4,7 +4,7 @@
 
 class UnitConversionUtil:
     def __init__(self):
-        print
+        print "init UnitConversionUtil..."
 
     def convert_to_yuan(self, value, util=u'无'):
         if util == u'亿':

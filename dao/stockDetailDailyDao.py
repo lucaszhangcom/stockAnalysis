@@ -8,7 +8,7 @@ import sys
 class StockDetailDailyDao:
 
     def __init__(self):
-        print
+        print "init StockDetailDailyDao..."
 
     def insert_detail_daily(self, stock_detail_daily):
         sql = "insert into stock_detail_daily(stock_id, open_price, close_price, highest_price, lowest_price, " \

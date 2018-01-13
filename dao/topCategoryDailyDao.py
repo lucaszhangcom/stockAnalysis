@@ -8,7 +8,7 @@ import sys
 class TopCategoryDailyDao:
 
     def __init__(self):
-        print ""
+        print "init TopCategoryDailyDao..."
 
     def insert_top_category_daily(self, category_id, ranking, net_inflow, rise, fall):
         data_source = DataSource()

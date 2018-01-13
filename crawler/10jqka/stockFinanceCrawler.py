@@ -17,7 +17,7 @@ class StockFinanceCrawler:
     __url = "http://stockpage.10jqka.com.cn/%s/"
 
     def __init__(self):
-        print
+        print "init StockFinanceCrawler..."
 
     def __init_stock(self, stock_code, finance_detail):
         unit_conversion_util = UnitConversionUtil()

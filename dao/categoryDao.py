@@ -9,7 +9,7 @@ import sys
 class CategoryDao:
 
     def __init__(self):
-        print
+        print "init CategoryDao..."
 
     def insert_category(self, code, name, category_type, url):
         data_source = DataSource()

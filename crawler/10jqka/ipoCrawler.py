@@ -14,7 +14,7 @@ class IpoCrawler:
     __url = "http://data.10jqka.com.cn/ipo/xgsgyzq/board/all/field/SGDATE/page/1/order/desc/ajax/1/"
 
     def __init__(self):
-        print
+        print "init IpoCrawler..."
 
     def ipo(self):
         system_encoding = sys.getfilesystemencoding()

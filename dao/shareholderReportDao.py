@@ -9,7 +9,7 @@ import sys
 class ShareholderReportDao:
 
     def __init__(self):
-        print
+        print "init ShareholderReportDao..."
 
     def insert_shareholder_report(self, stock_id, report_date, total_shareholder,
                                   shareholder_chain, avg_tradable_share,avg_tradable_share_chain):

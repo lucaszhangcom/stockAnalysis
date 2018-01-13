@@ -48,7 +48,6 @@ for i in range(1, 2):
                 print tds[0].string
                 print tds[1].string
                 print tds[3].string
-                print
     except urllib2.HTTPError, e:
         print e.code + "\t" + urlWithParam
 
