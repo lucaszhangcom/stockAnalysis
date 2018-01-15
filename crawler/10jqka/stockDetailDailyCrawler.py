@@ -179,7 +179,7 @@ class StockDetailDailyCrawler:
             except:
                 print "Unexpected error:", sys.exc_value
 
-            sleep_time = random.randint(10, 30)
+            sleep_time = random.randint(5, 20)
             print "sleep %d second...\n" % sleep_time
             time.sleep(sleep_time)
 
