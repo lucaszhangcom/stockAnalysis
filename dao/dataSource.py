@@ -6,8 +6,8 @@ import psycopg2
 
 class DataSource:
 
-    __host = "127.0.0.1"
-    # __host = "10.10.10.13"
+    # __host = "127.0.0.1"
+    __host = "10.10.10.12"
     __port = "5432"
     __db = "stockAnalysis"
     __username = "stockanalysis"

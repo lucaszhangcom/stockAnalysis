@@ -1,3 +1,11 @@
+--来源网站
+create table website(
+  id SERIAL PRIMARY KEY ,
+  name varchar(20),
+  website_domain varchar(50),
+  status INTEGER DEFAULT 1
+);
+
 --股票基本信息表
 create table stock(
   id SERIAL PRIMARY KEY ,
@@ -82,5 +90,6 @@ create table stock_detail_daily(
   small_in bigint ,--小单流入（手）
   large_out bigint , --大单流出（手）
   mid_out bigint , --中单流出（手）
-  small_out bigint  --小单流出（手）
+  small_out bigint,  --小单流出（手）
+  website INTEGER REFERENCES website(id)
 );
