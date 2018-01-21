@@ -2,14 +2,19 @@
 # 股东报表
 
 from dataSource import DataSource
+import logging
+import logging.config
 
 import sys
 
 
 class ShareholderReportDao:
 
+    __logger = None
+
     def __init__(self):
-        print "init ShareholderReportDao..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def insert_shareholder_report(self, stock_id, report_date, total_shareholder,
                                   shareholder_chain, avg_tradable_share,avg_tradable_share_chain):
@@ -26,7 +31,7 @@ class ShareholderReportDao:
             conn.commit()
         except:
             conn.rollback()
-            print "Unexpected error:", sys.exc_value
+            self.__logger.error("Unexpected error: %s" % sys.exc_value)
         finally:
             cur.close()
             conn.close()
@@ -54,7 +59,7 @@ class ShareholderReportDao:
 
             return report_map
         except:
-            print "Unexpected error:", sys.exc_value
+            self.__logger.error("Unexpected error: %s" % sys.exc_value)
             return None
         finally:
             cur.close()

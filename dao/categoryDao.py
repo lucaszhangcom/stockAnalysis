@@ -5,11 +5,16 @@ from model import Category
 from dao import DataSource
 import sys
 
+import logging
+import logging.config
 
 class CategoryDao:
 
+    __logger = None
+
     def __init__(self):
-        print "init CategoryDao..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def insert_category(self, code, name, category_type, url):
         data_source = DataSource()
@@ -20,7 +25,7 @@ class CategoryDao:
             cur.execute("insert into category(code, name, cate_type, url) values('%s', '%s', '%s', '%s')" % (code, name, category_type, url))
             conn.commit()
         except:
-            print "Unexpected error:", sys.exc_info()[0]
+            self.__logger.error("Unexpected error: %s" % sys.exc_info()[0])
             conn.rollback()
         finally:
             cur.close()
@@ -35,9 +40,9 @@ class CategoryDao:
             cur.execute("insert into stock_category_mapping(stock_id, category_id) values(%d, %d)" % (categroy_id, stock_id))
             conn.commit()
 
-            print "insert category_stock_mapping %s %s" % (categroy_id, stock_id)
+            self.__logger.info("insert category_stock_mapping %s %s" % (categroy_id, stock_id))
         except:
-            print "Unexpected error:", sys.exc_info()[0]
+            self.__logger.error("Unexpected error:" % sys.exc_info()[0])
             conn.rollback()
         finally:
             cur.close()
@@ -62,7 +67,7 @@ class CategoryDao:
 
             return categories
         except:
-            print "Unexpected error:", sys.exc_info()[0]
+            self.__logger.error("Unexpected error: %s" % sys.exc_info()[0])
             return None
         finally:
             cur.close()

@@ -4,11 +4,17 @@
 from dao import DataSource
 import sys
 from model import Stock
+import logging
+import logging.config
+
 
 class StockDao:
 
+    __logger = None
+
     def __init__(self):
-        print "init StockDao..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def insert_stock(self, code, name):
         data_source = DataSource()
@@ -19,7 +25,7 @@ class StockDao:
             cur.execute("insert into stock(code, name) values('%s', '%s')" % (code, name))
             conn.commit()
         except:
-            print "Unexpected error:", sys.exc_info()[0]
+            self.__logger.error("Unexpected error: %s" % sys.exc_info()[0])
             conn.rollback()
         finally:
             cur.close()
@@ -43,7 +49,7 @@ class StockDao:
 
             return stocks
         except:
-            print "Unexpected error:", sys.exc_value
+            self.__logger.error("Unexpected error: %s" % sys.exc_value)
             return None
         finally:
             cur.close()
@@ -60,7 +66,7 @@ class StockDao:
             cur.execute(sql % (stock.bps, stock.eps, stock.net_income, stock.ngpr, stock.income, stock.sps, stock.fps, stock.udpps, stock.total_stock_issue, stock.liqui, stock.code))
             conn.commit()
         except:
-            print "Unexpected error:", sys.exc_value
+            self.__logger.error("Unexpected error: %s" % sys.exc_value)
             conn.rollback()
         finally:
             cur.close()

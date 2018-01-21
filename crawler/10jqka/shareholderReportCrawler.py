@@ -10,6 +10,8 @@ from bs4 import BeautifulSoup
 
 from dao import StockDao
 from dao import ShareholderReportDao
+import logging
+import logging.config
 
 class ShareholderReportCrawler:
 
@@ -17,8 +19,11 @@ class ShareholderReportCrawler:
     __url = "http://stockpage.10jqka.com.cn/%s/holder/"
 
     __shareholder_report_dao = None
+    __logger = None
 
     def __init__(self):
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
         self.__shareholder_report_dao = ShareholderReportDao()
 
     def holder_report(self, stock_code, stock_id, shareholder_report_dict=None):
@@ -72,7 +77,7 @@ class ShareholderReportCrawler:
             self.__shareholder_report_dao.insert_shareholder_report(stock_id, report_date, int(float(total_shareholder)),
                                                                     shareholder_chain, int(float(avg_tradable_share)),
                                                                     avg_tradable_share_chain)
-            print stock_id, report_date, total_shareholder, shareholder_chain, avg_tradable_share,avg_tradable_share_chain
+            self.__logger.info(stock_id, report_date, total_shareholder, shareholder_chain, avg_tradable_share,avg_tradable_share_chain)
 
     def all_holder_report(self):
         stock_dao = StockDao()
@@ -82,7 +87,7 @@ class ShareholderReportCrawler:
             try:
                 self.holder_report(stock.code, stock.id)
             except:
-                print "Unexpected error:", sys.exc_value
+                self.__logger.error("Unexpected error: %s" % sys.exc_value)
 
 shareholderReportCrawler = ShareholderReportCrawler()
 shareholderReportCrawler.all_holder_report()

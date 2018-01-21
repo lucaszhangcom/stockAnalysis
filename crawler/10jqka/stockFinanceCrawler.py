@@ -5,6 +5,8 @@
 from model import Stock
 from dao import StockDao
 from utils import UnitConversionUtil
+import logging
+import logging.config
 from proxy import Proxies
 
 from bs4 import BeautifulSoup
@@ -15,9 +17,11 @@ import sys
 class StockFinanceCrawler:
 
     __url = "http://stockpage.10jqka.com.cn/%s/"
+    __logger = None
 
     def __init__(self):
-        print "init StockFinanceCrawler..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def __init_stock(self, stock_code, finance_detail):
         unit_conversion_util = UnitConversionUtil()
@@ -65,7 +69,7 @@ class StockFinanceCrawler:
 
 stockFinanceCrawler = StockFinanceCrawler()
 #stockFinanceCrawler.all_finance_detail()
-stockFinanceCrawler.one_finance_detail('002925')
-# stockFinanceCrawler.one_finance_detail('300664')
+stockFinanceCrawler.one_finance_detail('300738')
+# stockFinanceCrawler.one_finance_detail('603056')
 # stockFinanceCrawler.one_finance_detail('002923')
 # stockFinanceCrawler.one_finance_detail('300735')

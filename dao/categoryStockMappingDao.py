@@ -3,13 +3,18 @@
 
 from dao import DataSource
 from model import CategoryStockMapping
+import logging
+import logging.config
 
 import sys
 
 class CategoryStockMappingDao:
 
+    __logger = None
+
     def __init__(self):
-        print "CategoryStockMappingDao init..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def query_all(self):
         data_source = DataSource()
@@ -26,7 +31,7 @@ class CategoryStockMappingDao:
 
             return category_stock_mappings
         except:
-            print "Unexpected error:", sys.exc_info()[0]
+            self.__logger.error("Unexpected error: %s" % sys.exc_info()[0])
             conn.rollback()
             return None
         finally:

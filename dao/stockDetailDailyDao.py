@@ -2,13 +2,18 @@
 # 股票每日交易明细
 
 from dao import DataSource
+import logging
+import logging.config
 
 import sys
 
 class StockDetailDailyDao:
 
+    __logger = None
+
     def __init__(self):
-        print "init StockDetailDailyDao..."
+        logging.config.fileConfig("/Users/lucas-joyce/工作/python/stockCrawler/logger.config")
+        self.__logger = logging.getLogger('ths_crawler')
 
     def insert_detail_daily(self, stock_detail_daily):
         sql = "insert into stock_detail_daily(stock_id, open_price, close_price, highest_price, lowest_price, " \
@@ -31,7 +36,7 @@ class StockDetailDailyDao:
             conn.commit()
         except:
             conn.rollback()
-            print "Unexpected error:", sys.exc_value
+            self.__logger.error("Unexpected error: %s" % sys.exc_value)
         finally:
             cur.close()
             conn.close()
