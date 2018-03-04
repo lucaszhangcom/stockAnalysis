@@ -18,8 +18,8 @@ class StockDetailDailyDao:
     def insert_detail_daily(self, stock_detail_daily):
         sql = "insert into stock_detail_daily(stock_id, open_price, close_price, highest_price, lowest_price, " \
               "trading_volume, turnover, market_value, circulated_stock_value, amplitude, trading_volume_rate, " \
-              "pb_ratio, pe_ratio, large_in, mid_in, small_in, large_out, mid_out, small_out, website) " \
-              "values (%d, %f, %f, %f, %f, %d, %f, %d, %d, %f, %f, %f, %f, %d, %d, %d, %d, %d, %d, %d)"
+              "pb_ratio, pe_ratio, large_in, mid_in, small_in, large_out, mid_out, small_out, website, net_rate) " \
+              "values (%d, %f, %f, %f, %f, %d, %f, %d, %d, %f, %f, %f, %f, %d, %d, %d, %d, %d, %d, %d, %f)"
 
         data_source = DataSource()
         conn = data_source.get_conn()
@@ -32,7 +32,8 @@ class StockDetailDailyDao:
                                stock_detail_daily.circulated_stock_value, stock_detail_daily.amplitude, stock_detail_daily.trading_volume_rate,
                                stock_detail_daily.pb_ratio, stock_detail_daily.pe_ratio, stock_detail_daily.large_in,
                                stock_detail_daily.mid_in, stock_detail_daily.small_in, stock_detail_daily.large_out,
-                               stock_detail_daily.mid_out, stock_detail_daily.small_out, stock_detail_daily.website))
+                               stock_detail_daily.mid_out, stock_detail_daily.small_out, stock_detail_daily.website,
+                               stock_detail_daily.net_rate))
             conn.commit()
         except:
             conn.rollback()

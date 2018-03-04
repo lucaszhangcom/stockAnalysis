@@ -69,7 +69,7 @@ class StockFinanceCrawler:
 
 stockFinanceCrawler = StockFinanceCrawler()
 #stockFinanceCrawler.all_finance_detail()
-stockFinanceCrawler.one_finance_detail('300738')
-# stockFinanceCrawler.one_finance_detail('603056')
+stockFinanceCrawler.one_finance_detail('300644')
+stockFinanceCrawler.one_finance_detail('603871')
 # stockFinanceCrawler.one_finance_detail('002923')
 # stockFinanceCrawler.one_finance_detail('300735')

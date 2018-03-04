@@ -24,6 +24,7 @@ class StockDetailDaily:
     mid_out = 0
     small_out = 0
     website = 1
+    net_rate = 0
 
     def __init__(self):
         print "init StockDetailDaily..."

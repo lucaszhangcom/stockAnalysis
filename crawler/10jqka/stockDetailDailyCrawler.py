@@ -244,6 +244,14 @@ class StockDetailDailyCrawler:
             elif fund.get('name') == '\xe5\xa4\xa7\xe5\x8d\x95\xe6\xb5\x81\xe5\x85\xa5':#大单流入
                 stock_detail_daily.large_in = int(float(fund.get('sr')) / turnover * trading_volume)
 
+        #每天机构净流入占比
+        if stock_detail_daily.trading_volume_rate == 0:
+            stock_detail_daily.net_rate = 0
+        else:
+            stock_detail_daily.net_rate = (stock_detail_daily.large_in + stock_detail_daily.mid_in -
+                                           stock_detail_daily.large_out - stock_detail_daily.mid_out) / \
+                                          (stock_detail_daily.trading_volume / stock_detail_daily.trading_volume_rate)
+
         self.__stock_detail_daily_dao.insert_detail_daily(stock_detail_daily)
 
     def crawl_all_stock(self):
@@ -258,7 +266,7 @@ class StockDetailDailyCrawler:
             except:
                 self.__logger.error("Unexpected error: %s" % sys.exc_value)
 
-            sleep_time = random.randint(0, 5)
+            sleep_time = random.randint(0, 3)
             self.__logger.info("sleep %d second...\n" % sleep_time)
             time.sleep(sleep_time)
 

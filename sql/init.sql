@@ -91,5 +91,7 @@ create table stock_detail_daily(
   large_out bigint , --大单流出
   mid_out bigint , --中单流出
   small_out bigint,  --小单流出
-  website INTEGER REFERENCES website(id)
+  website INTEGER REFERENCES website(id),
+  net_rate DECIMAL (6,2) --流入流出净比值
 );
+
